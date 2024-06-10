@@ -1,10 +1,16 @@
-// Insere a coleção de usuários
 db.usuarios.insertMany([
     {
         "nome": "João Silva",
         "idade": 30,
         "email": "joao.silva@example.com",
-        "jogos": ["The Last of Us", "Grand Theft Auto V"],
+        "jogos": [{
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "The Last of Us"}).jogosDesenvolvidos[0]._id
+            },
+            {
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "Grand Theft Auto V"}).jogosDesenvolvidos[0]._id
+            }],
         "acessoAntecipado": true,
         "nickname": "jsilva"
     },
@@ -12,7 +18,14 @@ db.usuarios.insertMany([
         "nome": "Maria Oliveira",
         "idade": 25,
         "email": "maria.oliveira@example.com",
-        "jogos": ["Red Dead Redemption 2", "The Witcher 3: Wild Hunt"],
+        "jogos": [{
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "Red Dead Redemption 2"}).jogosDesenvolvidos[0]._id
+            },
+            {
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "The Witcher 3: Wild Hunt"}).jogosDesenvolvidos[0]._id
+            }],
         "acessoAntecipado": false,
         "nickname": "mariaoliveira"
     },
@@ -20,7 +33,18 @@ db.usuarios.insertMany([
         "nome": "Carlos Souza",
         "idade": 35,
         "email": "carlos.souza@example.com",
-        "jogos": ["Half-Life 2", "Portal 2", "The Elder Scrolls V: Skyrim"],
+        "jogos": [{
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "Half-Life 2"}).jogosDesenvolvidos[0]._id
+            },
+            {
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "Portal 2"}).jogosDesenvolvidos[0]._id
+            },
+            {
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "The Elder Scrolls V: Skyrim"}).jogosDesenvolvidos[0]._id
+            }],
         "acessoAntecipado": true,
         "nickname": "csouza"
     },
@@ -28,7 +52,14 @@ db.usuarios.insertMany([
         "nome": "John Doe",
         "idade": 28,
         "email": "johndoe@example.com",
-        "jogos": ["The Last of Us", "The Last of Us Part II"],
+        "jogos": [{
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "The Last of Us"}).jogosDesenvolvidos[0]._id
+            },
+            {
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "The Last of Us Part II"}).jogosDesenvolvidos[0]._id
+            }],
         "acessoAntecipado": false,
         "nickname": "johndoe"
     },
@@ -36,7 +67,14 @@ db.usuarios.insertMany([
         "nome": "Jane Doe",
         "idade": 26,
         "email": "janedoe@example.com",
-        "jogos": ["The Last of Us", "The Last of Us Part II"],
+        "jogos": [{
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "The Last of Us"}).jogosDesenvolvidos[0]._id
+            },
+            {
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "The Last of Us Part II"}).jogosDesenvolvidos[0]._id
+            }],
         "acessoAntecipado": true,
         "nickname": "janedoe"
     },
@@ -44,7 +82,14 @@ db.usuarios.insertMany([
         "nome": "Gabriel Ribeiro",
         "idade": 22,
         "email": "gamer123@example.com",
-        "jogos": ["Grand Theft Auto V", "Grand Theft Auto IV"],
+        "jogos": [{
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "Grand Theft Auto V"}).jogosDesenvolvidos[0]._id
+            },
+            {
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "Grand Theft Auto IV"}).jogosDesenvolvidos[0]._id
+            }],
         "acessoAntecipado": false,
         "nickname": "gamer123"
     },
@@ -52,7 +97,10 @@ db.usuarios.insertMany([
         "nome": "Paula Lima",
         "idade": 24,
         "email": "player456@example.com",
-        "jogos": ["Red Dead Redemption 2"],
+        "jogos": [{
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "Red Dead Redemption 2"}).jogosDesenvolvidos[0]._id
+            }],
         "acessoAntecipado": true,
         "nickname": "player456"
     },
@@ -60,7 +108,10 @@ db.usuarios.insertMany([
         "nome": "Washington Luis",
         "idade": 29,
         "email": "witcherfan@example.com",
-        "jogos": ["The Witcher 3: Wild Hunt"],
+        "jogos": [{
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "The Witcher 3: Wild Hunt"}).jogosDesenvolvidos[0]._id
+            }],
         "acessoAntecipado": false,
         "nickname": "witcherfan"
     },
@@ -68,7 +119,10 @@ db.usuarios.insertMany([
         "nome": "Renato Livio",
         "idade": 27,
         "email": "rpglover@example.com",
-        "jogos": ["The Witcher 3: Wild Hunt"],
+        "jogos": [{
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "The Witcher 3: Wild Hunt"}).jogosDesenvolvidos[0]._id
+            }],
         "acessoAntecipado": true,
         "nickname": "rpglover"
     },
@@ -76,7 +130,10 @@ db.usuarios.insertMany([
         "nome": "Paulo Fagundes",
         "idade": 23,
         "email": "portalplayer@example.com",
-        "jogos": ["Portal 2"],
+        "jogos": [{
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "Portal 2"}).jogosDesenvolvidos[0]._id
+            }],
         "acessoAntecipado": false,
         "nickname": "portalplayer"
     },
@@ -84,7 +141,10 @@ db.usuarios.insertMany([
         "nome": "Fernanda Souza",
         "idade": 32,
         "email": "halflifefan@example.com",
-        "jogos": ["Half-Life 2"],
+        "jogos": [{
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "Half-Life 2"}).jogosDesenvolvidos[0]._id
+            }],
         "acessoAntecipado": true,
         "nickname": "halflifefan"
     },
@@ -92,7 +152,10 @@ db.usuarios.insertMany([
         "nome": "Cassie Silva",
         "idade": 31,
         "email": "tesfan@example.com",
-        "jogos": ["The Elder Scrolls V: Skyrim"],
+        "jogos": [{
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "The Elder Scrolls V: Skyrim"}).jogosDesenvolvidos[0]._id
+            }],
         "acessoAntecipado": false,
         "nickname": "tesfan"
     },
@@ -100,11 +163,11 @@ db.usuarios.insertMany([
         "nome": "Oliver Rivera",
         "idade": 33,
         "email": "morrowindlover@example.com",
-        "jogos": ["The Elder Scrolls IV: Morrowind"],
+        "jogos": [{
+                "$ref": "empresasProdutorasDeGames",
+                "$id": db.empresasProdutorasDeGames.findOne({"jogosDesenvolvidos.titulo": "The Elder Scrolls IV: Morrowind"}).jogosDesenvolvidos[0]._id
+            }],
         "acessoAntecipado": true,
         "nickname": "morrowindlover"
     }
 ]);
-
-// Verifica se os dados foram inseridos corretamente
-db.usuarios.find().pretty();
