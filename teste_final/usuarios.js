@@ -207,3 +207,17 @@ db.usuarios.insertMany([
         "nickname": "crewmate"
     }
 ]);
+
+
+//update com $push
+db.usuarios.updateOne(
+    { "nickname": "jsilva" },
+    { 
+        $push: { 
+            "jogos": { 
+                "jogo": "Sonic", 
+                "percentualHoras": 0.2 
+            } 
+        } 
+    }
+);
